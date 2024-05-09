@@ -7,8 +7,13 @@ const FullName = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const fullName = `Full Name: ${first} ${last}`;
+    if(first.trim() !=="" && last.trim() !==""){
+      const fullName = `Full Name: ${first} ${last}`;
     setFullName(fullName);
+    }else{
+      setFullName("");
+    }
+    
   };
 
 //   const isSubmit= first.trim()==="" || last.trim()==="";
