@@ -11,6 +11,8 @@ const FullName = () => {
     setFullName(fullName);
   };
 
+  const isSubmit= first.trim()==="" && last.trim()==="";
+
   return (
     <div>
       <h1>Full Name Display</h1>
@@ -34,7 +36,7 @@ const FullName = () => {
               required
             />
           </div>
-          <button type="submit">submit</button>
+          <button type="submit" disabled={isSubmit} >Submit</button>
         </div>
       </form>
       {/* displayful name */}
