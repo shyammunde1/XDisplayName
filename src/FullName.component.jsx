@@ -1,13 +1,13 @@
 import React, { useState } from "react";
 
 const FullName = () => {
-  const [firstName, setFirstname] = useState("");
-  const [lastName, setLastname] = useState("");
+  const [first, setFirstname] = useState("");
+  const [last, setLastname] = useState("");
   const [fullName, setFullName] = useState("");
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const fullName = `Full Name: ${firstName} ${lastName}`;
+    const fullName = `Full Name: ${first} ${last}`;
     setFullName(fullName);
   };
 
@@ -20,8 +20,7 @@ const FullName = () => {
             <label>First Name</label>
             <input
               type="text"
-              placeholder="first name"
-              value={firstName}
+              value={first}
               onChange={(e) => setFirstname(e.target.value)}
               required
             />
@@ -30,8 +29,7 @@ const FullName = () => {
             <label>Last Name</label>
             <input
               type="text"
-              placeholder="Last name"
-              value={lastName}
+              value={last}
               onChange={(e) => setLastname(e.target.value)}
               required
             />
