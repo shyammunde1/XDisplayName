@@ -7,7 +7,7 @@ const FullName = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    const fullName = `${firstName} ${lastName}`;
+    const fullName = `Full Name: ${firstName} ${lastName}`;
     setFullName(fullName);
   };
 
@@ -40,7 +40,7 @@ const FullName = () => {
         </div>
       </form>
       {/* displayful name */}
-      <p>Full Name: {fullName}</p>
+      <p>{fullName}</p>
     </div>
   );
 };
