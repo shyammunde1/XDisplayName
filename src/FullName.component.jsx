@@ -7,20 +7,18 @@ const FullName = () => {
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
-    if(first.trim() !=="" && last.trim() !==""){
+    if (first.trim() !== "" && last.trim() !== "") {
       const fullName = `Full Name: ${first} ${last}`;
-    setFullName(fullName);
-    }else{
+      setFullName(fullName);
+    } else {
       setFullName("");
     }
-    
   };
 
-//   const isSubmit= first.trim()==="" || last.trim()==="";
+  const show = first.trim() === "" || last.trim() === "";
 
   return (
-    <div>
-      <h1>Full Name Display</h1>
+    <>
       <form onSubmit={formSubmitHandler}>
         <div className="container">
           <div>
@@ -41,12 +39,11 @@ const FullName = () => {
               required
             />
           </div>
-          <button type="submit"  >Submit</button>
+          <button type="submit">Submit</button>
         </div>
       </form>
-      {/* displayful name */}
-    <p>{fullName}</p> 
-    </div>
+      {show && <p>{fullName}</p>}
+    </>
   );
 };
 
