@@ -4,18 +4,18 @@ const FullName = () => {
   const [first, setFirstname] = useState("");
   const [last, setLastname] = useState("");
   const [fullName, setFullName] = useState("");
+  const [show, setShow] = useState(false);
 
   const formSubmitHandler = (e) => {
     e.preventDefault();
     if (first.trim() !== "" && last.trim() !== "") {
+      setShow(true);
       const fullName = `Full Name: ${first} ${last}`;
       setFullName(fullName);
     } else {
       setFullName("");
     }
   };
-
-  const show = first.trim() === "" || last.trim() === "";
 
   return (
     <>
